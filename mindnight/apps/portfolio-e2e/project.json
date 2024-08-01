@@ -1,0 +1,26 @@
+{
+  "name": "portfolio-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/portfolio-e2e/src",
+  "tags": [],
+  "implicitDependencies": ["portfolio"],
+  "// targets": "to see all targets run: nx show project portfolio-e2e --web",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/portfolio-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "baseUrl": "http://localhost:4200"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/portfolio-e2e/**/*.{js,ts}"]
+      }
+    }
+  }
+}

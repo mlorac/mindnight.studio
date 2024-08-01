@@ -1,0 +1,34 @@
+{
+  "name": "md-ui",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "library",
+  "sourceRoot": "md-ui/src",
+  "prefix": "md",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:ng-packagr",
+      "options": {
+        "project": "md-ui/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "md-ui/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "md-ui/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "tsConfig": "md-ui/tsconfig.spec.json",
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ]
+      }
+    }
+  }
+}

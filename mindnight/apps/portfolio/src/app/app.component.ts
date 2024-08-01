@@ -1,14 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { MenuItem, NavbarComponent, SidebarComponent } from '@mindnight/md-ui';
 
 @Component({
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
+  imports: [RouterModule, NavbarComponent, SidebarComponent],
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
-  title = 'portfolio';
+  navbarResponsive = false;
+  showSidebar!: boolean;
+  items: MenuItem[] = [];
+
+  constructor() {
+    this.showSidebar = false;
+    this.createMenuNavbar();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    if (window.innerWidth < 1150) {
+      this.navbarResponsive = true;
+    } else {
+      this.navbarResponsive = false;
+    }
+  }
+
+  toggleSidebar(status: boolean) {
+    this.showSidebar = status;
+  }
+
+  private createMenuNavbar() {
+    this.items = [];
+    //this.items.push({ label: 'Quem sou', routerLink: '/quem-sou' });
+    this.items.push({ label: 'Portfólio', routerLink: '/portfolio' });
+    //this.items.push({ label: 'Serviços', routerLink: '/servicos' });
+    this.items.push({ label: 'Contato', routerLink: '/contato' });
+  }
 }

@@ -1,1 +1,10 @@
-<app-nx-welcome></app-nx-welcome> <router-outlet></router-outlet>
+<div class="overflow-x-hidden">
+	<md-sidebar [showSidebar]="showSidebar" (closeSidebar)="toggleSidebar($event)" [items]="items"></md-sidebar>
+	<md-navbar (toggleSidebar)="toggleSidebar($event)" [items]="items" [navbarResponsive]="navbarResponsive"></md-navbar>
+	<div class="flex justify-content-center">
+		<div class="full-page">
+			<router-outlet></router-outlet>
+		</div>
+	</div>
+	<!-- <md-footer></mnd-footer> -->
+</div>

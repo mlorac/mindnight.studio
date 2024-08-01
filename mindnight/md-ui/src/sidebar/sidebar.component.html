@@ -1,0 +1,20 @@
+<div class="sidebar" [ngClass]="{'visible': showSidebar}">
+    <div class="overlay" (click)="toggleSidebar()"></div>
+    <div class="content">
+      <div class="flex flex-column justify-content-between h-full">
+        <div>
+            <div class="flex justify-content-start pb-5">
+                <span class="material-symbols-outlined" (click)="toggleSidebar()">close</span>
+            </div>
+            <div *ngFor="let m of _items" class="p-2">
+                <a [routerLink]="m.routerLink" class="anchor-link" (click)="toggleSidebar()" routerLinkActive="anchor-link-activated">
+                    {{ m.label }}
+                </a>
+            </div>
+        </div>
+        
+        <div>
+            ícones de redes sociais
+        </div>
+    </div>
+</div>

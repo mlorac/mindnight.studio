@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+@import url("https://use.typekit.net/ntz5for.css");
+@import url("https://unpkg.com/primeflex@latest/primeflex.css");
+
+
+:root {
+    --c-black: #000000;
+    --c-white: #ffffff;
+    --c-gray: #CCCCCC;
+    --c-gray-dark: #4d4d4d;
+    --c-goiaba: #F5787D;
+    --c-goiaba-light: #F9A5A8;
+
+    --c-pastel-blue: #D4E6F4;
+    --c-pastel-lilac: #B9BAD6;
+    --c-pastel-pink: #FCD4DC;
+    --c-pastel-yellow: #F9E4AD;
+    --c-pastel-green: #C8E6C9;
+    --c-pastel-orange: #FCD1BE;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "gill-sans-nova", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--c-black);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+}
+
+.logo {
+    background-repeat: no-repeat;
+    height: auto;
+    background-size: contain;
+    background-position: center center;
+
+    &-horizontal {
+        width: 180px;
+
+        &-black {
+            background-image: url(images/logo/horizontal_black.svg);
+        }
+        &-white {
+            background-image: url(images/logo/horizontal_white.svg);
+        }
+        &-goiaba {
+            background-image: url(images/logo/horizontal_goiaba.svg);
+        }
+    }
+
+    &-block {
+        width: 65px;
+        height: 60px;
+
+        &-black {
+            background-image: url(images/logo/block_black.svg);
+        }
+        &-white {
+            background-image: url(images/logo/block_white.svg);
+        }
+        &-goiaba {
+            background-image: url(images/logo/block_goiaba.svg);
+        }
+    }    
+}
+
+@media screen and (min-width: 1150px) {
+    .logo {
+        padding: 1rem;
+    }
+    
+}
+
+.c-black {
+    color: var(--c-black);
+}
+.bg-black {
+    background-color: var(--c-black);
+}
+.c-white {
+    color: var(--c-white);
+}
+.bg-white {
+    background-color: var(--c-white);
+}
+.c-goiaba {
+    color: var(--c-goiaba);
+}
+.bg-goiaba {
+    background-color: var(--c-goiaba);
+}
+.c-gray {
+    color: var(--c-gray);
+}
+.bg-gray {
+    background-color: var(--c-gray);
+}
+.c-gray-dark {
+    color: var(--c-gray-dark);
+}
+.bg-gray-dark {
+    background-color: var(--c-gray-dark);
+}
+
+.c-pastel-blue {
+    color: var(--c-pastel-blue);
+}
+.bg-pastel-blue {
+    background-color: var(--c-pastel-blue);
+}
+.c-pastel-lilac {
+    color: var(--c-pastel-lilac);
+}
+.bg-pastel-lilac {
+    background-color: var(--c-pastel-lilac);
+}
+.c-pastel-pink {
+    color: var(--c-pastel-pink);
+}
+.bg-pastel-pink {
+    background-color: var(--c-pastel-pink);
+}
+.c-pastel-yellow {
+    color: var(--c-pastel-yellow);
+}
+.bg-pastel-yellow {
+    background-color: var(--c-pastel-yellow);
+}
+.c-pastel-green {
+    color: var(--c-pastel-green);
+}
+.bg-pastel-green {
+    background-color: var(--c-pastel-green);
+}
+.c-pastel-orange {
+    color: var(--c-pastel-orange);
+}
+.bg-pastel-orange {
+    background-color: var(--c-pastel-orange);
+}
+
+
+.full-page {
+    width: 100%;
+    min-height: calc(100vh - 55px);
+}
+
+.max-size {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 3rem;
+    padding-bottom: 0;
+}
+
+@media screen and (max-width: 575.98px) {
+    .max-size {
+      padding: 1rem;
+    }
+}
+  
+@media screen and (min-width: 576px) and (max-width: 991.98px) {
+    .max-size {
+      padding: 2rem;
+    }
+    .md\:icon-default {
+        width: 32px!important;
+        height: 36px!important;
+    }
+    .md\:icon-large {
+        width: 42px!important;
+        height: 48px!important;
+    }
+}
+  
+@media screen and (min-width: 992px) {
+    .max-size {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+
+    .lg\:icon-large {
+        width: 42px!important;
+        height: 48px!important;
+    }
+    .lg\:icon-default {
+        width: 32px!important;
+        height: 36px!important;
+    }
+}
+
+.line-ellipses-3 {
+    display: -webkit-box;
+    line-clamp: 3;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+  
+.line-ellipses-4 {
+    display: -webkit-box;
+    line-clamp: 4;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.icon {
+    background-repeat: no-repeat;
+    height: auto;
+    background-size: contain;
+    background-position: center center;
+    width: 32px;
+    height: 36px;
+    margin: 1rem;
+
+    &-instagram {
+        -webkit-mask-image: url(images/brands/instagram.svg);
+        mask-image: url(images/brands/instagram.svg);
+    }
+    &-behance {
+        -webkit-mask-image: url(images/brands/behance.svg);
+        mask-image: url(images/brands/behance.svg);
+    }
+    &-linkedin {
+        -webkit-mask-image: url(images/brands/linkedin.svg);
+        mask-image: url(images/brands/linkedin.svg);
+    }
+    &-whatsapp {
+        -webkit-mask-image: url(images/brands/whatsapp.svg);
+        mask-image: url(images/brands/whatsapp.svg);
+    }
+    &-envelope {
+        -webkit-mask-image: url(images/brands/envelope.svg);
+        mask-image: url(images/brands/envelope.svg);
+    }
+
+    &-large {
+        width: 42px;
+        height: 48px;
+    }
+}
+
+.title-page {
+    font-size: 64px;
+    font-weight: 900;
+    font-family: "gill-sans-nova", sans-serif;
+}
+
+.subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    font-family: "gill-sans-nova", sans-serif;
+}
+
+.text-small {
+    font-size: 14px;
+}
+
+@media screen and (max-width: 575.98px) {
+    .title {
+        font-size: 32px;
+    }
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .text-small {
+        font-size: 10px;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 991.98px) {
+    .title {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 20px;
+    }
+
+    .text-small {
+        font-size: 12px;
+    }
+}

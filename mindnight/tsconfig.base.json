@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@mindnight/md-ui": ["md-ui/src/public-api.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

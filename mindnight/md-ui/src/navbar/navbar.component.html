@@ -5,7 +5,7 @@
 	</a>
 	<div class="div-navbar flex align-items-center" *ngIf="!isResponsive && !navbarResponsive">
 		<div class="text-center">
-			<span *ngFor="let m of items" [routerLink]="m.routerLink" class="button-link" routerLinkActive="button-link-activated">
+			<span *ngFor="let m of items" [routerLink]="m.routerLink" class="anchor-link" routerLinkActive="anchor-link-activated">
             	{{ m.label }}
 			</span>
 		</div>

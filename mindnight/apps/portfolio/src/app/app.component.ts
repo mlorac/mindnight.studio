@@ -1,6 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { MenuItem, NavbarComponent, SidebarComponent } from '@mindnight/md-ui';
+import { MenuItem } from '@mindnight/md-data';
+import { NavbarComponent, SidebarComponent } from '@mindnight/md-ui';
+
 
 @Component({
   standalone: true,

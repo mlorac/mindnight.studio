@@ -1,5 +1,6 @@
 import { HostListener, inject, Injectable } from '@angular/core';
-import { WINDOW } from './data/window-const';
+import { WINDOW } from '../models';
+
 
 
 @Injectable({

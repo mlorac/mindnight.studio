@@ -1,23 +1,23 @@
 <div class="overflow-hidden">
     <div class="py-6 lg:py-8">
         <section class="max-size">
-            <div class="grid gap-3">
-                <div class="col-12 lg:col-6">
+            <div class="grid">
+                <div class="col-12 md:col-6">
                     <h1 class="title-page">Olá, eu sou a Carol Manfredini</h1>
                     <p class="subtitle c-gray-dark">
                         Após 10 anos no mercado de desenvolvimento de sistemas e passar por inúmeras linguagens de programação me encontrei na área de Product Designer. Minha motivação é criar soluções e experiências que facilitem a vida das pessoas e as deixem um pouco mais feliz.
                     </p>
-                    <div class="my-4">
+                    <div class="mt-4">
                         <md-button
                             class="btn-primary-black"
                             type="button"
                             label="Ver portfólio"
-                            routerLink="/portfolio-ux-design">
+                            routerLink="/portfolio">
                         </md-button>
                     </div>
                     
                 </div>
-                <div class="col-12 lg:col-6">
+                <div class="col-12 md:col-6">
                     <div class="grid gap-3 text-right mt-3" *ngIf="!isMobile">
                         <div *ngFor="let menu of menus" class="link-page" (click)="setMenuVisible(menu.fragment)"
                             [ngClass]="{'link-activated': menu.visible}">
@@ -29,7 +29,7 @@
                             <h3 class="subtitle">
                                 Vídeo de apresentação
                             </h3>
-                            <iframe class="border-none w-full"  src="https://www.youtube.com/embed/E4-VHSVlYcg"></iframe>
+                            <iframe class="border-none w-full" height="350px" src="https://www.youtube.com/embed/E4-VHSVlYcg"></iframe>
                         </div>
                         <div class="border-section mt-4">
                             <h3 class="subtitle">
@@ -49,9 +49,9 @@
                                 Experiências
                             </h3>
                             <div class="pt-2">
-                                <div class="my-2 flex gap-3 align-items-start">
-                                    <div class="font-semibold text-sm">2021<br>2024</div>
-                                    <div>
+                                <div class="my-2 mx-0 grid align-items-start">
+                                    <div class="font-semibold text-sm col-2">2021<br>2024</div>
+                                    <div class="col-10">
                                         <span class="text-large font-semibold">Octa Economia Circular</span>
                                         <div>
                                             Product Designer / Front-end Angular
@@ -65,9 +65,9 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="my-2 flex gap-3 align-items-start">
-                                    <div class="font-semibold text-sm">2021<br>2021</div>
-                                    <div>
+                                <div class="my-2 mx-0 grid align-items-start">
+                                    <div class="font-semibold text-sm col-2">2021<br>2021</div>
+                                    <div class="col-10">
                                         <span class="text-large font-semibold">BBI Soluções/ Leega Solutions</span>
                                         <div>
                                             Desenvolvedora front-end Angular
@@ -78,22 +78,22 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="my-2 flex gap-3 align-items-start">
-                                    <div class="font-semibold text-sm">2021<br>2021</div>
-                                    <div>
+                                <div class="my-2 mx-0 grid align-items-start">
+                                    <div class="font-semibold text-sm col-2">2021<br>2021</div>
+                                    <div class="col-10">
                                         <span class="text-large font-semibold">BBI Soluções/ Leega Solutions</span>
                                         <div>
                                             Desenvolvedora front-end Angular
                                         </div>
                                         <ul>
                                             <li>Desenvolimento do sistema Tags Santander</li>
-                                            <li>Criação do novo layout em angular material para melhor usabilidade</li>
+                                            <li>Criação do novo layout com angular material</li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="my-2 flex gap-3 align-items-start">
-                                    <div class="font-semibold text-sm">2019<br>2020</div>
-                                    <div>
+                                <div class="my-2 mx-0 grid align-items-start">
+                                    <div class="font-semibold text-sm col-2">2019<br>2020</div>
+                                    <div class="col-10">
                                         <span class="text-large font-semibold">Pagou Fácil - Paschoalotto</span>
                                         <div>
                                             Desenvolvedora Full Stack Angular/.NET Core
@@ -105,9 +105,9 @@
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="my-2 flex gap-3 align-items-start">
-                                    <div class="font-semibold text-sm">2016<br>2019</div>
-                                    <div>
+                                <div class="my-2 mx-0 grid align-items-start">
+                                    <div class="font-semibold text-sm col-2">2016<br>2019</div>
+                                    <div class="col-10">
                                         <span class="text-large font-semibold">Finch Soluções</span>
                                         <div>
                                             Desenvolvedora Python/Java 

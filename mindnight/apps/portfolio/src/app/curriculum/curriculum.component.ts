@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ButtonComponent, DisplayService, MenuItem, TagComponent } from '@mindnight/md-ui';
+import { ButtonComponent, TagComponent } from '@mindnight/md-ui';
+import { DisplayService, MenuItem } from '@mindnight/md-data';
 
 
 @Component({

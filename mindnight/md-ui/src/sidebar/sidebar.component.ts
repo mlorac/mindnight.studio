@@ -1,7 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MenuItem } from '../public-api';
 import { RouterModule } from '@angular/router';
+import { MenuItem } from '@mindnight/md-data';
+
 
 @Component({
   selector: 'md-sidebar',

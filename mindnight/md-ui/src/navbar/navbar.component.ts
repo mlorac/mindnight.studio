@@ -1,9 +1,8 @@
 import { Component, EventEmitter, HostListener, inject, Input, Output } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { DisplayService, MenuItem } from '../public-api';
 import { Subscription } from 'rxjs';
-import { WINDOW } from '../data/window-const';
+import { DisplayService, MenuItem, WINDOW } from '@mindnight/md-data';
 
 
 @Component({

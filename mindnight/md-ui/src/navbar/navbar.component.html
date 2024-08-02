@@ -1,17 +1,17 @@
 <div class="container-navbar overflow-x-hidden" [ngClass]="{'div-navbar-fixed': windowScroll > 200}">
-	<a [routerLink]="['/']" class="cursor-pointer flex align-items-center mx-3">
+	<a (click)="goToHome()" class="cursor-pointer flex align-items-center mx-3">
 		<div class="logo" 
 			[ngClass]="navbarResponsive ? 'logo-block logo-block-black' : 'logo-horizontal logo-horizontal-black'"></div>
 	</a>
-	<div class="div-navbar flex align-items-center" *ngIf="!navbarResponsive">
+	<div class="div-navbar flex align-items-center" *ngIf="!isResponsive && !navbarResponsive">
 		<div class="text-center">
-			<span *ngFor="let m of items" [routerLink]="m.routerLink" class="anchor-link" routerLinkActive="anchor-link-activated">
+			<span *ngFor="let m of items" [routerLink]="m.routerLink" class="button-link" routerLinkActive="button-link-activated">
             	{{ m.label }}
 			</span>
 		</div>
 	</div>
 
-	<div *ngIf="navbarResponsive" (click)="openSidebar()">
+	<div *ngIf="isResponsive || navbarResponsive" (click)="openSidebar()">
 		<span class="material-symbols-outlined">menu</span>
 	</div>
 </div>

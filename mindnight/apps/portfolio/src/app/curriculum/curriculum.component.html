@@ -1,13 +1,13 @@
 <div class="overflow-hidden">
     <div class="py-6 lg:py-8">
         <section class="max-size">
-            <div class="grid">
+            <div class="grid gap-3">
                 <div class="col-12 lg:col-6">
                     <h1 class="title-page">Olá, eu sou a Carol Manfredini</h1>
-                    <div class="subtitle c-gray-dark">
+                    <p class="subtitle c-gray-dark">
                         Após 10 anos no mercado de desenvolvimento de sistemas e passar por inúmeras linguagens de programação me encontrei na área de Product Designer. Minha motivação é criar soluções e experiências que facilitem a vida das pessoas e as deixem um pouco mais feliz.
-                    </div>
-                    <div class="grid gap-3 my-4">
+                    </p>
+                    <div class="my-4">
                         <md-button
                             class="btn-primary-black"
                             type="button"
@@ -17,162 +17,151 @@
                     </div>
                     
                 </div>
-                <div class="grid col-12 lg:col-6 py-3 justify-content-end hidden lg:flex" *ngIf="!displayService.isMobile">
-                    <img class="home-img" src="../../../assets/images/portfolio/portfolio.png">
-                </div>
-            </div>
-        </section>
-        <section class="max-size">
-            <div class="grid gap-4 md:align-items-center lg:align-items-start">
-                <div class="grid flex-column col-3 text-right mt-3 hidden lg:block">
-                    <div *ngFor="let menu of menus" class="link-page" (click)="setMenuVisible(menu.fragment)"
-                        [ngClass]="{'link-activated': menu.visible}">
-                        {{ menu.label }}
-                    </div>
-                </div>
-                <div class="col-12 md:col-8" *ngIf="isResumeVisible || isMobile">
-                    <div class="border-section">
-                        <div class="title-section">
-                            Vídeo de apresentação
+                <div class="col-12 lg:col-6">
+                    <div class="grid gap-3 text-right mt-3" *ngIf="!isMobile">
+                        <div *ngFor="let menu of menus" class="link-page" (click)="setMenuVisible(menu.fragment)"
+                            [ngClass]="{'link-activated': menu.visible}">
+                            {{ menu.label }}
                         </div>
-                        <iframe class="border-none"  src="https://www.youtube.com/embed/E4-VHSVlYcg"></iframe>
                     </div>
-                    <div class="border-section mt-4">
-                        <div class="title-section">
-                            Especialidades
+                    <div class="w-full" *ngIf="isResumeVisible || isMobile">
+                        <div class="border-section">
+                            <h3 class="subtitle">
+                                Vídeo de apresentação
+                            </h3>
+                            <iframe class="border-none w-full"  src="https://www.youtube.com/embed/E4-VHSVlYcg"></iframe>
                         </div>
-                        <div class="grid m-0 py-2 gap-2">
-                            <div class="tag">
-                                Product Design
-                            </div>
-                            <div class="tag">
-                                UX Design
-                            </div>
-                            <div class="tag">
-                                Angular
+                        <div class="border-section mt-4">
+                            <h3 class="subtitle">
+                                Especialidades
+                            </h3>
+                            <div class="grid m-0 py-2 gap-2">
+                                <md-tag label="Product Design"></md-tag>
+                                <md-tag label="UX Design"></md-tag>
+                                <md-tag label="Angular"></md-tag>
                             </div>
                         </div>
                     </div>
-                </div>
-    
-                <div class="col-12 md:col-8" *ngIf="isExperienceVisible || isMobile">
-                    <div class="border-section">
-                        <div class="title-section">
-                            Experiências
-                        </div>
-                        <div class="pt-2">
-                            <div class="my-2 flex gap-3 align-items-start">
-                                <div class="font-semibold text-sm">2021 -<br>2024</div>
-                                <div>
-                                    <span class="text-large font-semibold">Octa Economia Circular</span>
+        
+                    <div class="w-full" *ngIf="isExperienceVisible || isMobile">
+                        <div class="border-section mt-4 lg:mt-0">
+                            <h3 class="subtitle">
+                                Experiências
+                            </h3>
+                            <div class="pt-2">
+                                <div class="my-2 flex gap-3 align-items-start">
+                                    <div class="font-semibold text-sm">2021<br>2024</div>
                                     <div>
-                                        Product Designer / Front-end Angular
+                                        <span class="text-large font-semibold">Octa Economia Circular</span>
+                                        <div>
+                                            Product Designer / Front-end Angular
+                                        </div>
+                                        <ul>
+                                            <li>Desenvolimento do ecossistema de produtos em Angular</li>
+                                            <li>Mapeamento de personas, Jornadas de usuários</li>
+                                            <li>UX Research, UI Design, Design Thinking</li>
+                                            <li>Biblioteca de componentes próprios Figma/Angular</li>
+                                            <li>Documentação de User Stories para a equipe técnica</li>
+                                        </ul>
                                     </div>
-                                    <ul>
-                                        <li>Desenvolimento do ecossistema de produtos em Angular</li>
-                                        <li>Mapeamento de personas, Jornadas de usuários</li>
-                                        <li>UX Research, UI Design, Design Thinking</li>
-                                        <li>Biblioteca de componentes próprios Figma/Angular</li>
-                                        <li>Documentação de User Stories para a equipe técnica</li>
-                                    </ul>
                                 </div>
-                            </div>
-                            <div class="my-2 flex gap-3 align-items-start">
-                                <div class="font-semibold text-sm">2021 -<br>2021</div>
-                                <div>
-                                    <span class="text-large font-semibold">BBI Soluções/ Leega Solutions</span>
+                                <div class="my-2 flex gap-3 align-items-start">
+                                    <div class="font-semibold text-sm">2021<br>2021</div>
                                     <div>
-                                        Desenvolvedora front-end Angular
+                                        <span class="text-large font-semibold">BBI Soluções/ Leega Solutions</span>
+                                        <div>
+                                            Desenvolvedora front-end Angular
+                                        </div>
+                                        <ul>
+                                            <li>Desenvolimento do sistema Tags Santander</li>
+                                            <li>Novo layout em angular material para melhor usabilidade</li>
+                                        </ul>
                                     </div>
-                                    <ul>
-                                        <li>Desenvolimento do sistema Tags Santander</li>
-                                        <li>Novo layout em angular material para melhor usabilidade</li>
-                                    </ul>
                                 </div>
-                            </div>
-                            <div class="my-2 flex gap-3 align-items-start">
-                                <div class="font-semibold text-sm">2021 -<br>2021</div>
-                                <div>
-                                    <span class="text-large font-semibold">BBI Soluções/ Leega Solutions</span>
+                                <div class="my-2 flex gap-3 align-items-start">
+                                    <div class="font-semibold text-sm">2021<br>2021</div>
                                     <div>
-                                        Desenvolvedora front-end Angular
+                                        <span class="text-large font-semibold">BBI Soluções/ Leega Solutions</span>
+                                        <div>
+                                            Desenvolvedora front-end Angular
+                                        </div>
+                                        <ul>
+                                            <li>Desenvolimento do sistema Tags Santander</li>
+                                            <li>Criação do novo layout em angular material para melhor usabilidade</li>
+                                        </ul>
                                     </div>
-                                    <ul>
-                                        <li>Desenvolimento do sistema Tags Santander</li>
-                                        <li>Criação do novo layout em angular material para melhor usabilidade</li>
-                                    </ul>
                                 </div>
-                            </div>
-                            <div class="my-2 flex gap-3 align-items-start">
-                                <div class="font-semibold text-sm">2019 -<br>2020</div>
-                                <div>
-                                    <span class="text-large font-semibold">Pagou Fácil - Paschoalotto</span>
+                                <div class="my-2 flex gap-3 align-items-start">
+                                    <div class="font-semibold text-sm">2019<br>2020</div>
                                     <div>
-                                        Desenvolvedora Full Stack Angular/.NET Core
+                                        <span class="text-large font-semibold">Pagou Fácil - Paschoalotto</span>
+                                        <div>
+                                            Desenvolvedora Full Stack Angular/.NET Core
+                                        </div>
+                                        <ul>
+                                            <li>Desenvolimento da plataforma pagou fácil B2B</li>
+                                            <li>Manutenção e atividades em .NET Cores</li>
+                                            <li>Criação da equipe de suporte ao cliente</li>
+                                        </ul>
                                     </div>
-                                    <ul>
-                                        <li>Desenvolimento da plataforma pagou fácil B2B</li>
-                                        <li>Manutenção e atividades em .NET Cores</li>
-                                        <li>Criação da equipe de suporte ao cliente</li>
-                                    </ul>
                                 </div>
-                            </div>
-                            <div class="my-2 flex gap-3 align-items-start">
-                                <div class="font-semibold text-sm">2016 -<br>2019</div>
-                                <div>
-                                    <span class="text-large font-semibold">Finch Soluções</span>
+                                <div class="my-2 flex gap-3 align-items-start">
+                                    <div class="font-semibold text-sm">2016<br>2019</div>
                                     <div>
-                                        Desenvolvedora Python/Java 
+                                        <span class="text-large font-semibold">Finch Soluções</span>
+                                        <div>
+                                            Desenvolvedora Python/Java 
+                                        </div>
+                                        <ul>
+                                            <li>Manutenção em sistemas web utilizando Spring boot</li>
+                                            <li>Criação de crawlers e automações processuais</li>
+                                        </ul>
                                     </div>
-                                    <ul>
-                                        <li>Manutenção em sistemas web utilizando Spring boot</li>
-                                        <li>Criação de crawlers e automações processuais</li>
-                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-    
-                <div class="col-12 md:col-8" *ngIf="isFormationVisible || isMobile">
-                    <div class="border-section">
-                        <div class="title-section">
-                            Formação
-                        </div>
-                        <div class="py-2 text-large">
-                            <div class="my-2">
-                                2010 - 2012 · Colégio Técnico Industrial - UNESP Bauru: Habilitação em informática
-                            </div>
-                            <div class="my-2">
-                                2013 - 2016 · Universidade. Sagrado Coração: Graduação em Design
-                            </div>
-                            
-                        </div>
-                    </div>
-                    <div class="border-section mt-4">
-                        <div class="title-section">
-                            Cursos
-                        </div>
-                        <div class="py-2 text-large">
-                            <div class="my-3">
-                                <span class="text-large font-semibold">2024 · Minicurso de UX/UI Design</span>
-                                <div>
-                                    Cubos Academy
+        
+                    <div class="w-full" *ngIf="isFormationVisible || isMobile">
+                        <div class="border-section mt-4 lg:mt-0">
+                            <h3 class="subtitle">
+                                Formação
+                            </h3>
+                            <div class="py-2 text-large">
+                                <div class="my-2">
+                                    2010 - 2012 · Colégio Técnico Industrial - UNESP Bauru: Habilitação em informática
                                 </div>
-                                <a href="https://aulas.cubos.academy/certificado/39259b8b-d9fa-4249-83e4-dbbd540f6ed8/cursos/0a3de5c9-d6ed-418b-88d5-2d76c14028c4" target="_blank" class="link my-2">
-                                    Ver credencial
-                                </a>
-                            </div>
-                            <div class="my-3">
-                                <span class="text-large font-semibold">2024 · Branding: criando uma marca forte</span>
-                                <div>
-                                    Alura
+                                <div class="my-2">
+                                    2013 - 2016 · Universidade. Sagrado Coração: Graduação em Design
                                 </div>
-                                <a href="https://cursos.alura.com.br/certificate/39d9e782-5957-4f8a-a87a-6cbeeeda6244" target="_blank" class="link my-2">
-                                    Ver credencial
-                                </a>
+                                
                             </div>
-                            
+                        </div>
+                        <div class="border-section mt-4">
+                            <div class="subtitle">
+                                Cursos
+                            </div>
+                            <div class="py-2 text-large">
+                                <div class="my-3">
+                                    <span class="text-large font-semibold">2024 · Minicurso de UX/UI Design</span>
+                                    <div>
+                                        Cubos Academy
+                                    </div>
+                                    <a href="https://aulas.cubos.academy/certificado/39259b8b-d9fa-4249-83e4-dbbd540f6ed8/cursos/0a3de5c9-d6ed-418b-88d5-2d76c14028c4" target="_blank" class="link my-2">
+                                        Ver credencial
+                                    </a>
+                                </div>
+                                <div class="my-3">
+                                    <span class="text-large font-semibold">2024 · Branding: criando uma marca forte</span>
+                                    <div>
+                                        Alura
+                                    </div>
+                                    <a href="https://cursos.alura.com.br/certificate/39d9e782-5957-4f8a-a87a-6cbeeeda6244" target="_blank" class="link my-2">
+                                        Ver credencial
+                                    </a>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                 </div>

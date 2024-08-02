@@ -1,13 +1,7 @@
-import { HostListener, inject, Injectable, InjectionToken } from '@angular/core';
+import { HostListener, inject, Injectable } from '@angular/core';
+import { WINDOW } from '../models';
 
-export const WINDOW = new InjectionToken<Window>('WindowToken', {
-  factory: () => {
-    if(typeof window !== 'undefined') {
-      return window
-    }
-    return new Window(); // does this work?
-  }
-});
+
 
 @Injectable({
   providedIn: 'root'

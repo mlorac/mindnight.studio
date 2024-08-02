@@ -1,3 +1,4 @@
-<button class="btn" [classList]="'btn ' + class">
+<button class="btn" [classList]="'btn ' + class" [routerLink]="[routerLink]" routerLinkActive="router-link-active"
+    (click)="click?.emit()">
     {{ label }}
 </button>

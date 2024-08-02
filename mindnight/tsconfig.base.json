@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mindnight/md-data": ["md-data/src/index.ts"],
       "@mindnight/md-ui": ["md-ui/src/public-api.ts"]
     }
   },

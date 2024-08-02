@@ -1,0 +1,35 @@
+.icon {
+    background-repeat: no-repeat;
+    height: auto;
+    background-size: contain;
+    background-position: center center;
+    width: 32px;
+    height: 36px;
+    margin: 1rem;
+
+    &-instagram {
+        -webkit-mask-image: url(images/brands/instagram.svg);
+        mask-image: url(images/brands/instagram.svg);
+    }
+    &-behance {
+        -webkit-mask-image: url(images/brands/behance.svg);
+        mask-image: url(images/brands/behance.svg);
+    }
+    &-linkedin {
+        -webkit-mask-image: url(images/brands/linkedin.svg);
+        mask-image: url(images/brands/linkedin.svg);
+    }
+    &-whatsapp {
+        -webkit-mask-image: url(images/brands/whatsapp.svg);
+        mask-image: url(images/brands/whatsapp.svg);
+    }
+    &-envelope {
+        -webkit-mask-image: url(images/brands/envelope.svg);
+        mask-image: url(images/brands/envelope.svg);
+    }
+
+    &-large {
+        width: 42px;
+        height: 48px;
+    }
+}

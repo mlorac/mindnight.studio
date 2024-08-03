@@ -2,12 +2,13 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonComponent, TagComponent } from '@mindnight/md-ui';
 import { DisplayService, MenuItem } from '@mindnight/md-data';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-curriculum',
   standalone: true,
-  imports: [CommonModule, ButtonComponent, TagComponent],
+  imports: [CommonModule, ButtonComponent, TagComponent, RouterModule],
   templateUrl: './curriculum.component.html',
   styleUrl: './curriculum.component.scss',
 })

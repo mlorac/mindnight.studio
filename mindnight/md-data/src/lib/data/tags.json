@@ -1,0 +1,78 @@
+[
+    {
+        "id": "1",
+        "name": "UX Design",
+        "color": "pink"
+    },
+    {
+        "id": "2",
+        "name": "UI Design",
+        "color": "pink"
+    },
+    {
+        "id": "3",
+        "name": "Branding",
+        "color": "orange"
+    },
+    {
+        "id": "4",
+        "name": "Desenvolvimento",
+        "color": "lilac"
+    },
+    {
+        "id": "5",
+        "name": "Angular",
+        "color": "blue"
+    },
+    {
+        "id": "6",
+        "name": ".NET Core",
+        "color": "blue"
+    },
+    {
+        "id": "7",
+        "name": "Java",
+        "color": "blue"
+    },
+    {
+        "id": "8",
+        "name": "Python",
+        "color": "blue"
+    },
+    {
+        "id": "9",
+        "name": "Crawler",
+        "color": "lilac"
+    }
+    ,
+    {
+        "id": "10",
+        "name": "Tom de Voz",
+        "color": "pink"
+    },
+    {
+        "id": "11",
+        "name": "Identidade Visual",
+        "color": "pink"
+    },
+    {
+        "id": "12",
+        "name": "Arquetipo",
+        "color": "orange"
+    },
+    {
+        "id": "13",
+        "name": "Jornada do Usuário",
+        "color": "pink"
+    },
+    {
+        "id": "14",
+        "name": "Arquitetura",
+        "color": "lilac"
+    },
+    {
+        "id": "15",
+        "name": "Negócio",
+        "color": "orange"
+    }
+]

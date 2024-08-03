@@ -1,0 +1,31 @@
+:host {
+    font-size: 1rem;
+    border: 1px solid var(--c-gray);
+    width: -webkit-fill-available;
+    font-weight: 400;
+    outline: none;
+    padding: 12px 16px;
+
+    &::placeholder {
+        color: var(--c-gray-dark);
+    }
+    &::-moz-placeholder {
+        color: var(--c-gray-dark);
+    }
+    &::-ms-placeholder {
+        color: var(--c-gray-dark);
+    }
+    &::-webkit-placeholder {
+        color: var(--c-gray-dark);
+    }
+    &::-o-placeholder {
+        color: var(--c-gray-dark);
+    }
+
+    &:hover {
+        border-color: var(--c-gray-dark);
+    }
+    &:focus {
+        border-color: var(--c-black);
+    }
+}

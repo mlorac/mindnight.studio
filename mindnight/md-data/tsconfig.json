@@ -6,7 +6,10 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "resolveJsonModule": true,  
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
   "files": [],
   "include": [],

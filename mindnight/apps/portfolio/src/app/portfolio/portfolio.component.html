@@ -1,17 +1,17 @@
-<div class="blog__two relative py-6 lg:py-8">
-    <div class="blog-page-rapper">
-        <div class="max-size">
-            <div class="grid gap-5 mt-4 align-items-start">
-                <div class="grid col-12 lg:col-8 pb-6" data-aos="fade-right">
+<div class="overflow-hidden">
+    <div class="blog__two relative py-8">
+        <section class="max-size">
+            <div class="grid justify-content-between align-items-start">
+                <div class="col-12 lg:col-7 pb-6" data-aos="fade-right">
                     <div class="left-blog">
                         <div class="left-one grid gap-4">
-                            <div class="card col-12 relative" *ngFor="let item of cases">
+                            <div class="card col-12 relative" *ngFor="let item of casesFiltered">
                                 <a [routerLink]="[item.url]" class="card-body relative">
                                     <div class="top__body grid gap-2">
-                                        <span class="tag" [ngStyle]="{'background-color': tag.target}"
-                                            *ngFor="let tag of item.items">
-                                            {{ tag.label }}
-                                        </span>
+                                        <md-tag *ngFor="let tag of item.items"
+                                            [label]="tag.label"
+                                            [color]="tag.target">
+                                        </md-tag>
                                     </div>
                                     <div class="row pt-20">
                                         <div class="col-lg-10">
@@ -24,35 +24,24 @@
                                 </a>
                             </div>
                         </div>
-                        <!-- <div class="row">
-                            <nav>
-                                <ul class="pagination d-flex">
-                                  <li><a href="#">1</a></li>
-                                  <li><a href="#">2</a></li>
-                                  <li><a href="#">3</a></li>
-                                  <li></li>
-                                  <li><a href="#" class="next__pagination">Next  <i class="bi bi-chevron-right"></i></a></li>
-                                </ul>
-                            </nav>
-                        </div> -->
                     </div>
                 </div>
-                <div class="grid hidden lg:block col-12 lg:col-4 bg-black" data-aos="fade-left">
+                <div class="hidden lg:block col-12 lg:col-4 bg-black" data-aos="fade-left">
                     <div class="right-blog">
                         <div class="blog-search mb-40">
-                            <form class="search-form relative flex align-items-center">
-                                <input type="text" placeholder="Search">
-
+                            <form class="search-form relative align-items-center">
+                                <label for="search" class="subtitle">Pesquisar artigo</label>
+                                <input name="search" mdInput type="text" placeholder="Search" [formControl]="searchFilter">
                             </form>
                         </div>
                         <div class="widget-right-section blog-taq mb-6">
-                            <h3 class="sub__title__two relative">Tags:</h3>
-                            <div class="tag_one mt-4">
-                                <a [href]="" (click)="searchByTag(tag.name)" [ngStyle]="{'background-color': tag.color}"
-                                    class="tag"
-                                    *ngFor="let tag of tags">
-                                    {{ tag.name }}
-                                </a>
+                            <h3 class="subtitle">Tags:</h3>
+                            <div class="flex flex-wrap tag_one mt-4">
+                                <md-tag (click)="searchByTag(tag)" *ngFor="let tag of tags"
+                                    class="cursor-pointer"
+                                    [label]="tag.name"
+                                    [color]="getColorTagSelected(tag.id)">
+                                </md-tag>
                             </div>
                         </div>
                         <div class="widget-Live position-relative">
@@ -64,6 +53,6 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </div>

@@ -5,9 +5,14 @@ import { CommonModule } from '@angular/common';
   selector: 'md-tag',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './tag.component.html',
+  template: `
+    <div class="tag" [ngClass]="color">
+      {{ label }}
+    </div>
+  `,
   styleUrl: './tag.component.scss',
 })
 export class TagComponent {
-  @Input() label!: string;
+  @Input() label?: string;
+  @Input() color?: string;
 }

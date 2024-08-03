@@ -13,9 +13,6 @@ export class DisplayService {
   private _isTablet = false;
   private _window = inject(WINDOW);
 
-  constructor() {
-    this.onResize();
-  }
 
   @HostListener('window:resize', ['$event'])
   onResize() {

@@ -5,7 +5,7 @@
                 <div class="col-12 lg:col-7 pb-6" data-aos="fade-right">
                     <div class="left-blog">
                         <div class="left-one grid gap-4">
-                            <div class="card col-12 relative" *ngFor="let item of cases">
+                            <div class="card col-12 relative" *ngFor="let item of casesFiltered">
                                 <a [routerLink]="[item.url]" class="card-body relative">
                                     <div class="top__body grid gap-2">
                                         <md-tag *ngFor="let tag of item.items"
@@ -30,12 +30,12 @@
                     <div class="right-blog">
                         <div class="blog-search mb-40">
                             <form class="search-form relative align-items-center">
-                                <label for="search">Pesquisar artigo</label>
-                                <input name="search" mdInput type="text" placeholder="Search">
+                                <label for="search" class="subtitle">Pesquisar artigo</label>
+                                <input name="search" mdInput type="text" placeholder="Search" [formControl]="searchFilter">
                             </form>
                         </div>
                         <div class="widget-right-section blog-taq mb-6">
-                            <h3 class="sub__title__two relative">Tags:</h3>
+                            <h3 class="subtitle">Tags:</h3>
                             <div class="flex flex-wrap tag_one mt-4">
                                 <md-tag (click)="searchByTag(tag)" *ngFor="let tag of tags"
                                     class="cursor-pointer"

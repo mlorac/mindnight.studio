@@ -1,32 +1,44 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { InputComponent, TagComponent } from '@mindnight/md-ui';
-import { CasesService, MenuItem, TagModel, TagsService } from '@mindnight/md-data';
+import { CasesService, DisplayService, MenuItem, TagModel, TagsService } from '@mindnight/md-data';
+import { FormControl, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, RouterModule, InputComponent, TagComponent],
+  imports: [CommonModule, RouterModule, InputComponent, TagComponent, ReactiveFormsModule],
   providers: [CasesService, TagsService],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, AfterViewInit {
   cases: MenuItem[] = [];
+  casesFiltered: MenuItem[] = [];
+
   tags: TagModel[] = [];
-  tagsSelected: TagModel[] = [];
+  private tagsSelected: TagModel[] = [];
+  searchFilter: FormControl = new FormControl(null);
 
   constructor(private tagsService: TagsService,
-              private casesService: CasesService
+              private casesService: CasesService,
+              private displayService: DisplayService
   ) {
     this.getTags();
   }
 
   ngOnInit(): void {
+    this.displayService.onResize();
     this.getCases();
+  }
+
+  ngAfterViewInit(): void {
+    this.searchFilter.valueChanges.subscribe(() => {
+      this.filterCases();
+    });
   }
 
   private getCases(): void {
@@ -39,6 +51,8 @@ export class PortfolioComponent implements OnInit {
           });
           item.items?.sort((a, b) => a.label?.localeCompare(b.label ?? '') ?? 0);
         });
+
+        this.filterCases();
       },
       error: err => console.error(err),
     });
@@ -70,5 +84,24 @@ export class PortfolioComponent implements OnInit {
     } else {
       this.tagsSelected.push(tag);
     }
+
+    this.filterCases();
+  }
+
+  private filterCases() {
+    this.casesFiltered = [...new Set(this.cases)];
+
+    if (this.searchFilter.value) {
+      this.casesFiltered = this.casesFiltered.filter(item => {
+        return item.title?.toLowerCase().includes(this.searchFilter.value.toLowerCase());
+      });
+    }
+
+    if (this.tagsSelected.length > 0) {
+      this.casesFiltered = this.casesFiltered.filter(item => {
+        return item.items?.find(subItem => this.tagsSelected.find(t => t.name === subItem.label));
+      });
+    }
+
   }
 }

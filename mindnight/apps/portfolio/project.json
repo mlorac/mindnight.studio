@@ -13,7 +13,7 @@
         "outputPath": "dist/apps/portfolio",
         "index": "apps/portfolio/src/index.html",
         "browser": "apps/portfolio/src/main.ts",
-        "polyfills": [],
+        "polyfills": ["zone.js"],
         "tsConfig": "apps/portfolio/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": [

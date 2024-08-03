@@ -13,28 +13,29 @@
     -ms-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
+    text-wrap: nowrap;
 
-    &-pink {
+    &.pink {
         background-color: var(--c-pastel-pink);
     }
 
-    &-blue {
+    &.blue {
         background-color: var(--c-pastel-blue);
     }
 
-    &-lilac {
+    &.lilac {
         background-color: var(--c-pastel-lilac);
     }
 
-    &-yellow {
+    &.yellow {
         background-color: var(--c-pastel-yellow);
     }
 
-    &-green {
+    &.green {
         background-color: var(--c-pastel-green);
     }
 
-    &-orange {
+    &.orange {
         background-color: var(--c-pastel-orange);
     }
 }

@@ -1,16 +1,18 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { InputComponent, TagComponent } from '@mindnight/md-ui';
-import { CasesService, DisplayService, MenuItem, TagModel, TagsService } from '@mindnight/md-data';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { DropdownComponent, InputComponent, TagComponent } from '@mindnight/md-ui';
+import { CasesService, MenuItem, TagModel, TagsService } from '@mindnight/md-data';
+import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [CommonModule, RouterModule, InputComponent, TagComponent, ReactiveFormsModule],
+  imports: [
+    CommonModule, RouterModule, ReactiveFormsModule, FormsModule,
+    InputComponent, TagComponent, DropdownComponent],
   providers: [CasesService, TagsService],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',
@@ -20,18 +22,17 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   casesFiltered: MenuItem[] = [];
 
   tags: TagModel[] = [];
+  selectedTag: TagModel | null = null;
   private tagsSelected: TagModel[] = [];
   searchFilter: FormControl = new FormControl(null);
 
   constructor(private tagsService: TagsService,
-              private casesService: CasesService,
-              private displayService: DisplayService
+              private casesService: CasesService
   ) {
     this.getTags();
   }
 
   ngOnInit(): void {
-    this.displayService.onResize();
     this.getCases();
   }
 
@@ -77,6 +78,14 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
       this.tags.find(item => item.id === tag)?.color ?? '' : '';
     
   }
+
+  selectTag(event: any) {
+    this.tagsSelected = [];
+    if (event.target.value !== null) {
+      this.tagsSelected.push(this.tags.filter(item => item.name === event.target.value)[0]);
+    }
+    this.filterCases();
+  }
   
   searchByTag(tag: TagModel): void {
     if (this.tagsSelected.includes(tag)) {
@@ -97,6 +106,7 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
       });
     }
 
+    console.log(this.tagsSelected);
     if (this.tagsSelected.length > 0) {
       this.casesFiltered = this.casesFiltered.filter(item => {
         return item.items?.find(subItem => this.tagsSelected.find(t => t.name === subItem.label));

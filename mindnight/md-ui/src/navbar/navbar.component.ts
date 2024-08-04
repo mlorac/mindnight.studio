@@ -2,7 +2,7 @@ import { Component, EventEmitter, HostListener, inject, Input, Output } from '@a
 import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
-import { DisplayService, MenuItem, WINDOW } from '@mindnight/md-data';
+import { MenuItem, WINDOW } from '@mindnight/md-data';
 
 
 @Component({
@@ -22,13 +22,12 @@ export class NavbarComponent {
   windowScroll = 0;
 
   constructor(
-    private router: Router,
-    public displayService: DisplayService,
+    private router: Router
   ) { }
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    if (this._window.innerWidth < 1150) {
+    if (this._window.innerWidth < 991.98) {
       this.navbarResponsive = true;
     } else {
       this.navbarResponsive = false;
@@ -51,9 +50,5 @@ export class NavbarComponent {
 
   openSidebar() {
     this.toggleSidebar.emit(true);
-  }
-
-  get isResponsive() {
-    return this.displayService.isTablet || this.displayService.isMobile;
   }
 }

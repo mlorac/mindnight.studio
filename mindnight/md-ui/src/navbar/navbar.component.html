@@ -3,7 +3,7 @@
 		<div class="logo" 
 			[ngClass]="navbarResponsive ? 'logo-block logo-block-black' : 'logo-horizontal logo-horizontal-black'"></div>
 	</a>
-	<div class="div-navbar flex align-items-center" *ngIf="!isResponsive && !navbarResponsive">
+	<div class="div-navbar flex align-items-center" *ngIf="!navbarResponsive">
 		<div class="text-center">
 			<span *ngFor="let m of items" [routerLink]="m.routerLink" class="anchor-link" routerLinkActive="anchor-link-activated">
             	{{ m.label }}
@@ -11,7 +11,7 @@
 		</div>
 	</div>
 
-	<div *ngIf="isResponsive || navbarResponsive" (click)="openSidebar()">
+	<div *ngIf="navbarResponsive" (click)="openSidebar()">
 		<span class="material-symbols-outlined">menu</span>
 	</div>
 </div>

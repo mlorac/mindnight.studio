@@ -1,0 +1,12 @@
+:host {
+    font-size: 1rem;
+    border: 1px solid var(--c-gray);
+    width: -webkit-fill-available;
+    font-weight: 400;
+    outline: none;
+    padding: 12px 16px;
+
+    & option:hover {
+        background-color: var(--c-goiaba-light);
+    }
+}

@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { DropdownComponent, InputComponent, TagComponent } from '@mindnight/md-ui';
 import { CasesService, MenuItem, TagModel, TagsService } from '@mindnight/md-data';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Meta, Title } from '@angular/platform-browser';
 
 
 
@@ -27,9 +28,13 @@ export class PortfolioComponent implements OnInit, AfterViewInit {
   searchFilter: FormControl = new FormControl(null);
 
   constructor(private tagsService: TagsService,
-              private casesService: CasesService
+              private casesService: CasesService,
+              private title: Title,
+              private meta: Meta
   ) {
     this.getTags();
+    this.title.setTitle('Portfolio | Carol Manfredini');
+    this.meta.updateTag({ name: 'description', content: 'Meu portfólio. Olá, eu sou a Carol Manfredini, desenvolvedora de sistemas desde 2013, é especialista em angular e apaixonada por design. Aqui estão alguns cases de estudo como UX designer' });
   }
 
   ngOnInit(): void {

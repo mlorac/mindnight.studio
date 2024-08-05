@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent, TagComponent } from '@mindnight/md-ui';
 import { DisplayService, MenuItem } from '@mindnight/md-data';
 import { RouterModule } from '@angular/router';
+import { Meta, Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -21,15 +22,19 @@ export class CurriculumComponent {
     // { label: 'Social', fragment: 'social', visible: false }
   ];
 
-  constructor(public displayService: DisplayService) {
+  constructor(public displayService: DisplayService,
+              private title: Title,
+              private meta: Meta
+  ) {
     this.isMobile = this.displayService.isMobile || this.displayService.isTablet;
+    this.title.setTitle('Olá, eu sou a Carol Manfredini');
+    this.meta.updateTag({ name: 'description', content: 'Portfólio pessoal de Carol Manfredini. Desenvolvedora de sistemas desde 2013, é especialista em angular e apaixonada por design. Aqui estão alguns cases de estudo como UX designer' });
   }
 
   setMenuVisible(fragment?: string) {
     this.menus.forEach(menu => {
       menu.visible = menu.fragment === fragment;
     });
-    console.log(this.menus);
   }
 
   get isResumeVisible() {

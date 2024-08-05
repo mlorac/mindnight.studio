@@ -9,10 +9,11 @@
                     </p>
                     <div class="mt-4">
                         <button mdButton
+                            aria-label="Ir para portfólio"
                             class="btn-primary-black"
                             type="button"
                             routerLink="/portfolio">
-                            Ver portfólio
+                            Portfólio
                         </button>
                     </div>
                     
@@ -20,7 +21,9 @@
                 <div class="col-12 md:col-6">
                     <div class="grid gap-3 text-right mt-3" *ngIf="!isMobile">
                         <div *ngFor="let menu of menus" class="link-page" (click)="setMenuVisible(menu.fragment)"
-                            [ngClass]="{'link-activated': menu.visible}">
+                            [ngClass]="{'link-activated': menu.visible}"
+                            role="button"
+                            attr.aria-label="Botão para mudar para a sessão {{menu.label}}">
                             {{ menu.label }}
                         </div>
                     </div>
@@ -29,16 +32,19 @@
                             <h3 class="subtitle">
                                 Vídeo de apresentação
                             </h3>
-                            <iframe class="border-none w-full" height="350px" src="https://www.youtube.com/embed/E4-VHSVlYcg"></iframe>
+                            <iframe aria-label="Vídeo de apresentação sobre Carol Manfredini"
+                                class="border-none w-full" height="350px"
+                                src="https://www.youtube.com/embed/E4-VHSVlYcg">
+                            </iframe>
                         </div>
                         <div class="border-section mt-4">
                             <h3 class="subtitle">
                                 Especialidades
                             </h3>
                             <div class="grid m-0 py-2 gap-2">
-                                <md-tag label="Product Design"></md-tag>
-                                <md-tag label="UX Design"></md-tag>
-                                <md-tag label="Angular"></md-tag>
+                                <md-tag aria-label="Etiqueta de categoria Product Design" label="Product Design"></md-tag>
+                                <md-tag aria-label="Etiqueta de categoria UX Design" label="UX Design"></md-tag>
+                                <md-tag aria-label="Etiqueta de categoria Angular" label="Angular"></md-tag>
                             </div>
                         </div>
                     </div>
@@ -147,7 +153,10 @@
                                     <div>
                                         Cubos Academy
                                     </div>
-                                    <a href="https://aulas.cubos.academy/certificado/39259b8b-d9fa-4249-83e4-dbbd540f6ed8/cursos/0a3de5c9-d6ed-418b-88d5-2d76c14028c4" target="_blank" class="link my-2">
+                                    <a role="button"
+                                        aria-label="Link para validação de certificado de Minicurso de UX/UI Design"
+                                        href="https://aulas.cubos.academy/certificado/39259b8b-d9fa-4249-83e4-dbbd540f6ed8/cursos/0a3de5c9-d6ed-418b-88d5-2d76c14028c4"
+                                        target="_blank" class="link my-2">
                                         Ver credencial
                                     </a>
                                 </div>
@@ -156,7 +165,9 @@
                                     <div>
                                         Alura
                                     </div>
-                                    <a href="https://cursos.alura.com.br/certificate/39d9e782-5957-4f8a-a87a-6cbeeeda6244" target="_blank" class="link my-2">
+                                    <a role="button"
+                                        aria-label="Link de validação de certificado de Branding: criando uma marca forte"
+                                        href="https://cursos.alura.com.br/certificate/39d9e782-5957-4f8a-a87a-6cbeeeda6244" target="_blank" class="link my-2">
                                         Ver credencial
                                     </a>
                                 </div>

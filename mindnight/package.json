@@ -2,7 +2,13 @@
   "name": "@mindnight/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "ng": "nx",
+    "portfolio:serve": "nx run portfolio:serve",
+    "website:serve": "nx run institucional:serve",
+    "portfolio:build": "nx run portfolio:build",
+    "website:build": "nx run institucional:build"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~18.1.0",
